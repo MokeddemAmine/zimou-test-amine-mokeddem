@@ -43,6 +43,7 @@ return new class extends Migration
             $table->double('total_price');
             $table->unsignedInteger('weight')->default(1000);
             $table->timestamps();
+            $table->engine = 'InnoDB';
         });
     }
 

@@ -26,6 +26,7 @@ return new class extends Migration
             $table->unsignedInteger('status')->default(1);
             $table->boolean('can_update_preparing_packages')->default(false);
             $table->timestamps();
+            $table->engine = 'InnoDB';
         });
     }
 
