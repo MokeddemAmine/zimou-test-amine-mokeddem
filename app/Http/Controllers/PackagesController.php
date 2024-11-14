@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\PackagesExport;
 use App\Models\Package;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PackagesController extends Controller
 {
@@ -12,8 +14,12 @@ class PackagesController extends Controller
      */
     public function index()
     {
-        $packages = Package::paginate(100);
+        $packages = Package::paginate(50);
         return view('packages.index',compact('packages'));
+    }
+
+    public function export(){
+        return Excel::download(new PackagesExport,'packages.xlsx');
     }
 
     /**

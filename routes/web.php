@@ -11,4 +11,5 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 
 Route::controller(PackagesController::class)->group(function(){
     Route::get('/packages','index')->name('packages.index');
+    Route::get('/downloadPackages','export')->name('packages.export');
 });

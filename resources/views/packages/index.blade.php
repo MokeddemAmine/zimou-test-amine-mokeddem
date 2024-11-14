@@ -3,6 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center align-items-center">
+        <div class="text-end my-4">
+            <a href="{{route('packages.export')}}" target="_blank" class="text-capitalize btn btn-outline-dark">export all packages</a>
+        </div>
         <table class="table table-striped table-hover">
             <thead class="table-dark">
                 <tr>
