@@ -3,9 +3,13 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center align-items-center">
-        <div class="text-end my-4">
+        <div class="d-flex justify-content-between align-items-center my-4">
+            <a href="{{route('packages.create')}}" class="text-capitalize btn btn-success">create package</a>
             <a href="{{route('packages.export')}}" target="_blank" class="text-capitalize btn btn-outline-dark">export all packages</a>
         </div>
+        @if (session('successMessage'))
+            <div class="my-4 text-success">{{session('successMessage')}}</div>
+        @endif
         <table class="table table-striped table-hover">
             <thead class="table-dark">
                 <tr>
