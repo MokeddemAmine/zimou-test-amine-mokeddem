@@ -9,4 +9,8 @@ class commune extends Model
 {
     use HasFactory;
     protected $table = 'communes';
+
+    public function wilaya(){
+        return $this->belongsTo(Wilaya::class);
+    }
 }
